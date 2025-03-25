@@ -6,26 +6,18 @@ import { motion } from "framer-motion";
 import Button from "@/app/shared/Button/Button";
 
 const TodoItem = ({ todo, onDelete }) => {
-  const motionClassName = clsx(
-    "flex w-full items-center justify-between",
-    "gap-3 p-4 border rounded-lg shadow",
-    "bg-gray-50 hover:bg-gray-100 transition-colors"
-  );
-
   return (
     <motion.li
+      layout
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      layout
-      className={motionClassName}
+      className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm border border-gray-200 hover:bg-gray-50 transition"
     >
-      <span className="flex-1 text-left text-gray-800">{todo.title}</span>
-      <div className="flex items-center gap-2">
-        <Button variant="danger" onClick={() => onDelete(todo.id)}>
-          Delete
-        </Button>
-      </div>
+      <span className="flex-1 text-gray-900 text-base">{todo.title}</span>
+      <Button variant="danger" size="sm" onClick={() => onDelete(todo.id)}>
+        Delete
+      </Button>
     </motion.li>
   );
 };

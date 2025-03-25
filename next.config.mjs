@@ -4,5 +4,4 @@ export default {
   images: {
     unoptimized: true,
   },
-  basePath: "/Todo_app",
 };
