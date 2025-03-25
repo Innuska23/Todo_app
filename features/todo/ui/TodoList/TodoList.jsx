@@ -6,7 +6,7 @@ import { useState } from "react";
 import useTodos from "../../hooks/useTodos";
 
 import Spinner from "@/app/shared/Spinner/Spinner";
-import TodoItem from "../Todoitem_pro/TodoItem";
+import TodoItem from "../TodoItem/TodoItem";
 
 export default function TodoList() {
   const { todos, isLoading, deleteTodo, addTodo } = useTodos();
