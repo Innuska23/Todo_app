@@ -4,8 +4,9 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 import useTodos from "../../hooks/useTodos";
-import TodoItem from "../TodoItem/TodoItem";
+
 import Spinner from "@/app/shared/Spinner/Spinner";
+import TodoItem from "../TodoItem/TodoItem";
 
 export default function TodoList() {
   const { todos, isLoading, deleteTodo, addTodo } = useTodos();
