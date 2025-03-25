@@ -50,4 +50,13 @@ body {
   .btn-lg {
     @apply px-5 py-3 text-lg;
   }
+  input {
+    all: unset;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: black;
+    font: 16px sans-serif;
+  }
 }

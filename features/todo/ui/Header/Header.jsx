@@ -9,14 +9,17 @@ import clsx from "clsx";
 const Header = () => {
   const { addTodo } = useTodos();
   const [title, setTitle] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
 
   const handleAdd = () => {
-    if (!title.trim()) return setError(true);
+    if (!title.trim()) {
+      setError("Please enter a todo");
+      return;
+    }
 
     addTodo({ title, completed: false });
     setTitle("");
-    setError(false);
+    setError('');
   };
 
   const inputClassName = clsx(
@@ -35,15 +38,18 @@ const Header = () => {
         <input
           type="text"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => {
+            setTitle(e.target.value);
+            if (error) setError("");
+          }}
           placeholder="Enter todo..."
           className={inputClassName}
         />
         <Button variant="primary" onClick={handleAdd}>
           Add
-        </Button>
-        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+        </Button> 
       </div>
+      {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
     </div>
   );
 };
