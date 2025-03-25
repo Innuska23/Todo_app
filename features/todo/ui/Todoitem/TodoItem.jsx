@@ -1,8 +1,9 @@
 "use client";
 
-import Button from "@/app/shared/Button/Button";
 import clsx from "clsx";
 import { motion } from "framer-motion";
+
+import Button from "@/app/shared/Button/Button";
 
 const TodoItem = ({ todo, onDelete }) => {
   const motionClassName = clsx(
